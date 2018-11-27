@@ -1,40 +1,41 @@
 1)
---comments: 
+--comments: Lines that start with Z
 grep "^Z" cities.txt
 
 2)
---comments: 
+--comments: Lines that end with gan
 grep "gan$" cities.txt
 
 3)
---comments: 
+--comments: Lines that start with A, D, or E
 grep "^[A,D,E]" cities.txt
 
 4)
---comments: 
+--comments: Words that have any character first followed by ar
 grep "\<.ar" cities.txt
 
 5)
---comments: 
+--comments: Lines that begin with any other character than C
 grep "^[^C]" cities.txt
 
 6)
---comments: 
+--comments: There at least 14 characters after the line begin, and grep can be used like egrep with additional escape characters in this case for the quantifiers.
 grep  -E "[^ ]{14,}" cities.txt OR
 grep "[^ ]\{14,\}" cities.txt
 
 7)
---comments: 
+--comments: The count of all lines that begin with B
 grep -c "^B" cities.txt 
 
 8)
---comments: 
+--comments: Pipes only the matching character d from each line that contains d to word count which then prints the newline count
 grep -o "d" cities.txt | wc -l
 
 9)
---comments: 
+--comments: Captures the second to last character on a line followed by a backreference to that captured character so that the last to characters of a line are the same
 grep -E "(.)\1$" cities.txt
 
 10)
---comments: 
+--comments: Captures the first 2 characters followed by any character followed by a backreference to the 2nd captured then the 1st captured (Pattern for a palindrome of 5 characters.
+Coding or scripting beyond just a regular expression would be needed to find a palindrome of any length because a TRUE regex can only work with finite data (to my knowledge).
 grep -E -i "\<(.)(.).\2\1\>" cities.txt 
