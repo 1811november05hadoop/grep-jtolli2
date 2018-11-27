@@ -1,0 +1,40 @@
+1)
+--comments: 
+grep "^Z" cities.txt
+
+2)
+--comments: 
+grep "gan$" cities.txt
+
+3)
+--comments: 
+grep "^[A,D,E]" cities.txt
+
+4)
+--comments: 
+grep "\<.ar" cities.txt
+
+5)
+--comments: 
+grep "^[^C]" cities.txt
+
+6)
+--comments: 
+grep  -E "[^ ]{14,}" cities.txt OR
+grep "[^ ]\{14,\}" cities.txt
+
+7)
+--comments: 
+grep -c "^B" cities.txt 
+
+8)
+--comments: 
+grep -o "d" cities.txt | wc -l
+
+9)
+--comments: 
+grep -E "(.)\1$" cities.txt
+
+10)
+--comments: 
+grep -E -i "\<(.)(.).\2\1\>" cities.txt 
